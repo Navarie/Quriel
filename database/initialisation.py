@@ -1,26 +1,28 @@
 import sqlite3
 
-connection = sqlite3.connect('musics.db')
+connection = sqlite3.connect("Quriel.db")
+cursor = connection.cursor()
 
-first = connection.cursor()
+cursor.execute(
+    """CREATE TABLE track(
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT, 
+        artist TEXT, 
+        album TEXT, 
+        genre TEXT,
+        released INTEGER, 
+        address TEXT) 
+    """)
 
-first.execute("""CREATE TABLE music (
-        id integer primary key autoincrement,
-        song_name text , 
-        artist text , 
-        publish_year integer , 
-        album text , 
-        address text , 
-        gener text
-        )""")
+cursor.execute(
+    """CREATE TABLE playlist_track(
+        track_number INTEGER, 
+        track_ID INTEGER, 
+        playlist_ID INTEGER)
+    """)
 
-first.execute("""CREATE TABLE playlist ( 
-        id integer primary key autoincrement  ,
-        playlist_name text
-        )""")
-
-first.execute("""CREATE TABLE playlist_song (
-        track_number integer ,
-        track_id integer , 
-        playlist_id integer
-    )""")
+cursor.execute(
+    """CREATE TABLE playlist( 
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT)
+    """)
