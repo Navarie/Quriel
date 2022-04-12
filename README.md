@@ -20,5 +20,6 @@ To run, please:
 Have fun!
 
 
-Some sample images will be shown below (on their way).
+Some sample images are shown below.
+![sample1.jpg](https://github.com/Navarie/Quriel/blob/main/sample1.jpg?raw=true)
     
